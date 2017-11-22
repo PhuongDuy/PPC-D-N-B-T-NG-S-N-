@@ -53,6 +53,7 @@
                                 <td>@Html.DisplayFor(modle => item.STREET.StreetName)</td>
                                 <td>
                                     @Html.ActionLink("Detail", "DetailProject", new { id = item.ID })|
+                                    @Html.ActionLink("Add", "AddProject")|
                                     @Html.ActionLink("Edit", "EditProject1", new { id = item.ID })|
                                     @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                                 </td>

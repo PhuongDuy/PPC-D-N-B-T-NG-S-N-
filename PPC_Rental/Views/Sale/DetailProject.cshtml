@@ -13,37 +13,10 @@
     <div>
         <div class="col-md-1">
             <img src="~/Images/ImageSale/if_scroll left_36560.png" style="width:38px; margin-left: 50%" />
-        </div><h1 style="margin-top: 10px;">Danh sách dự án \ Edit</h1>
+        </div><h1 style="margin-top: 10px;">Danh sách dự án \ Chi tiết dự án</h1>
     </div>
-    <nav class="navbar navbar-default" role="navigation" style="border: 1px solid;margin-top: 10px;">
-        <div class="container-fluid">
-            <div class="col-md-3" style="padding: 0;">
-                <select class="sale-select-option">
-                    <option>Tên dự án</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <select class="sale-select-option1" style="width: 100px;">
-                    <option>Loại</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <select class="sale-select-option1" style="width: 100px;margin: 0;">
-                    <option>Quận</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <select class="sale-select-option" style="width: 200px;">
-                    <option>Đường</option>
-                </select>
-            </div>
-            <div class="col-md-3 text-right" style="font-size:18px;">
-                <button type="submit" style="border-radius : 5px;"><span class="glyphicon glyphicon-search"></span> Tìm kiếm</button>
-                <img src="~/Images/ImageSale/if_edit_add_3219.png" style="width: 18px;" />
-                <button type="button" style="font-size:18px;border-radius : 5px;">Add</button>
-            </div>
-        </div>
-    </nav>
+    <hr />
+    <br />
     <div class="col-md-6" style="margin-top: 0;">
         <nav class="navbar navbar-default" role="navigation" style="border: 1px solid;margin : 0;background-color: deepskyblue">
             <div class="container-fluid" style="margin-top: 10px;margin-bottom: 0;padding-left: 20px;">
@@ -66,63 +39,42 @@
                         <option>
                             @Html.ValueFor(m => m.PROPERTY_TYPE.Description)
                         </option>
-                        <option>House</option>
-                        <option>Office</option>
-                        <option>Villa</option>
-                        <option>Apartment</option>
-
                     </select>
                     <span class="input-group-addon">Price :</span>
                     <input id="price" type="text" class="form-control" name="price" value="@Html.ValueFor(m => m.Price)" placeholder="Giá">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Avatar :</span>
-                    <input id="avatar" type="file" class="form-control" name="avatar" value="@Html.ValueFor(m => m.Avatar)">
+                    <input id="avatar" type="image" class="form-control" name="avatar" value="@Html.ValueFor(m => m.Avatar)">
                     <span class="input-group-addon">UnitPrice :</span>
                     <select id="unitprice" class="form-control" name="unitprice"><option>@Html.ValueFor(m => m.UnitPrice)</option></select>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Area :</span>
-                    <input id="area" type="text" class="form-control" name="area" value="@Html.ValueFor(m => m.Area)" placeholder="Giá">
+                    <input id="area" type="text" class="form-control" name="area" value="@Html.ValueFor(m => m.Area)" placeholder="Diện tích">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Images :</span>
-                    <input id="image" type="file" class="form-control" name="image" value="@Html.ValueFor(m => m.Images)">
+                    <input id="image" type="text" class="form-control" name="image" value="@Html.ValueFor(m => m.Images)">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Content :</span>
-                    <textarea id="content" type="text" class="form-control" name="content" placeholder="Nội dung">@Html.ValueFor(m => m.Content)</textarea>
+                    <textarea style="min-height: 140px;" id="content" type="text" class="form-control" name="content" placeholder="Nội dung">@Html.ValueFor(m => m.Content)</textarea>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">BedRoom :</span>
                     <select id="badroom" class="form-control" name="bebroom">
                         <option>@Html.ValueFor(m => m.BedRoom)</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-
                     </select>
                     <span class="input-group-addon">BethRoom :</span>
                     <select id="bathroom" class="form-control" name="bethroom">
                         <option>@Html.ValueFor(m => m.BathRoom)</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                     </select>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">PackingPlace :</span>
                     <select id="packingplace" class="form-control" name="packingplace" style="width: 170px;">
                         <option>@Html.ValueFor(m => m.PackingPlace)</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
                     </select>
                 </div>
                 <div class="input-group">
@@ -221,10 +173,6 @@
                     <span class="input-group-addon">Status :</span>
                     <select id="status" class="form-control" name="status" style="width: 100px;">
                         <option>@Html.ValueFor(m => m.PROJECT_STATUS.Status_Name)</option>
-                        <option>Chưa duyệt</option>
-                        <option>Lưu nháp</option>
-                        <option>Đã duyệt</option>
-                        <option>Hết hạn</option>
                     </select>
                     <span class="input-group-addon">Note :</span>
                     <input id="note" type="text" class="form-control" name="note" value="@Html.ValueFor(m => m.Note)" placeholder="...">
@@ -234,14 +182,7 @@
         <br />
 
         <div style="text-align:right;">
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-2" style="margin-left: 0;">
-                    @Html.ActionLink("Back to list", "Index")
-                </div>
-                <div class="col-md-offset-2 col-md-10" style="margin-left: 0;">
-                    <input type="submit" value="Save" class="btn btn-default" style="width: 70px; font-size: 18px;" />
-                </div>
-            </div>
+           @Html.ActionLink("Back to list", "Index")
         </div>
     </div>
 

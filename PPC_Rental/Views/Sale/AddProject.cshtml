@@ -1,16 +1,14 @@
-﻿@using PPC_Rental.Models;
-@model PPC_Rental.Models.PROPERTY
+﻿@model PPC_Rental.Models.PROPERTY
 
 @{
-    ViewBag.Title = "EditProject1";
+    ViewBag.Title = "AddProject";
     Layout = "~/Views/Shared/LayoutSale.cshtml";
-    var db = new K21T1_Team4Entities1();
 }
 
 <div>
     <div class="col-md-1">
         <img src="~/Images/ImageSale/if_scroll left_36560.png" style="width:38px; margin-left: 50%" />
-    </div><h1 style="margin-top: 10px;">Danh sách dự án \ Thay đổi thông tin dự án</h1>
+    </div><h1 style="margin-top: 10px;">Danh sách dự án \ Thêm dự án</h1>
 </div>
 @using (Html.BeginForm())
 {
@@ -19,9 +17,7 @@
     <div class="form-horizontal">
         <hr />
         <br />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.ID)
-
+      
         <div class="col-md-6" style="margin-top: 0;">
             <nav class="navbar navbar-default" role="navigation" style="border: 1px solid;margin : 0;background-color: deepskyblue">
                 <div class="container-fluid" style="margin-top: 10px;margin-bottom: 0;padding-left: 20px;">
@@ -32,35 +28,34 @@
                 <div style="padding: 10px;">
                     <div class="input-group">
                         <span class="input-group-addon">ID :</span>
-                        <p style="margin-top:10px;margin-left: 20px;">@Html.ValueFor(m => m.ID)</p>
+                        <p style="margin-top:10px;margin-left: 20px;"></p>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">PropertyName</span>
-                        <input id="PropertyName" type="text" class="form-control" name="PropertyName" value="@Html.ValueFor(m => m.PropertyName)" placeholder="Tên dự án">
+                        <input id="proname" type="text" class="form-control" name="projectname" value="" placeholder="Tên dự án">
 
                     </div>
                     <div class="input-group" style="width: 200px;">
                         <span class="input-group-addon">PropertyType</span>
                         <div class=" col-md-10">
-                            @Html.DropDownList("PropertyType_ID", new SelectList(ViewBag.editprotype, "ID", "Description", Model.PROPERTY_TYPE), new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.PropertyType_ID)
+                           
                         </div>
                         <span class="input-group-addon">Price :</span>
-                        <input style="width: auto;" id="price" type="text" class="form-control" name="price" value="@Html.ValueFor(m => m.Price)" placeholder="Giá">
+                        <input style="width: auto;" id="price" type="text" class="form-control" name="price" value="" placeholder="Giá">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Avatar :</span>
-                        <input id="avatar" type="file" class="form-control" name="avatar" value="@Html.ValueFor(m => m.Avatar).ToString()">
+                        <input id="avatar" type="file" class="form-control" name="avatar" value="">
                         <span class="input-group-addon">UnitPrice :</span>
-                        <select id="unitprice" class="form-control" name="unitprice"><option>@Html.ValueFor(m => m.UnitPrice)</option><option>USD</option></select>
+                        <select id="unitprice" class="form-control" name="unitprice"><option></option></select>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Area :</span>
-                        <input id="area" type="text" class="form-control" name="area" value="@Html.ValueFor(m => m.Area)" placeholder="Diện tích">
+                        <input id="area" type="text" class="form-control" name="area" value="" placeholder="Giá">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Images :</span>
-                        <input id="image" type="file" class="form-control" name="image" value="@Html.ValueFor(m => m.Images)">
+                        <input id="image" type="file" class="form-control" name="image" value="">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Content :</span>
@@ -68,8 +63,8 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">BedRoom :</span>
-                        <select id="BedRoom" class="form-control" name="BedRoom">
-                            <option>@Html.ValueFor(m => m.BedRoom)</option>
+                        <select id="badroom" class="form-control" name="bebroom">
+                            <option></option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -77,8 +72,8 @@
                             <option>5</option>
                         </select>
                         <span class="input-group-addon">BethRoom :</span>
-                        <select id="BathRoom" class="form-control" name="BathRoom">
-                            <option>@Html.ValueFor(m => m.BathRoom)</option>
+                        <select id="bathroom" class="form-control" name="bethroom">
+                            <option></option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -89,7 +84,7 @@
                     <div class="input-group">
                         <span class="input-group-addon">PackingPlace :</span>
                         <select id="packingplace" class="form-control" name="packingplace" style="width: 170px;">
-                            <option>@Html.ValueFor(m => m.PackingPlace)</option>
+                            <option></option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -99,11 +94,11 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">User :</span>
-                        <p style="margin-top:10px;margin-left: 20px;">@Html.ValueFor(m => m.USER.FullName)</p>
+                        <p style="margin-top:10px;margin-left: 20px;"></p>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Craeted at :</span>
-                        <p style="margin-top:10px;margin-left: 20px;">@Html.ValueFor(m => m.Created_at)</p>
+                        <p style="margin-top:10px;margin-left: 20px;"></p>
                     </div>
                 </div>
             </div>
@@ -165,21 +160,18 @@
                         <span class="input-group-addon">City :</span>
                         <p style="margin-top:10px;margin-left: 10px;margin-right: 10px;">HCM</p>
                         <span class="input-group-addon">District</span>
-                        <div class="form-group col-md-5" style="height: 35px;width: 100px;">
-                            @Html.DropDownList("District_ID", new SelectList(ViewBag.disid, "ID", "DistrictName", Model.DISTRICT), new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.District_ID)
+                        <div class="col-md-4" style="height: 35px;width: 100px;">
+                           
                         </div>
                         <span class="input-group-addon">Ward</span>
-                        <div class="form-group col-md-3" style="height: 35px;width: 100px;">
-                            @Html.DropDownList("Ward_ID", new SelectList(ViewBag.wardid, "ID", "WardName", Model.WARD), new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Ward_ID)
+                        <div class="col-md-3" style="height: 35px;width: 100px;">
+                           
                         </div>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Street</span>
-                        <div class="form-group col-md-10" style="height: 35px">
-                            @Html.DropDownListFor(m => m.Street_ID, new SelectList(ViewBag.streeid, "ID", "StreetName", Model.STREET), new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Street_ID)
+                        <div class="col-md-10" style="height: 35px">
+                           
                         </div>
                     </div>
                 </div>
@@ -194,33 +186,29 @@
                 <div style="padding: 10px;">
                     <div class="input-group">
                         <span class="input-group-addon">Sale :</span>
-                        <p style="margin-top:10px;margin-left: 20px;margin-right: 20px;">@Html.ValueFor(m => m.USER1.FullName)</p>
+                        <p style="margin-top:10px;margin-left: 20px;margin-right: 20px;"></p>
                         <span class="input-group-addon">Updated at :</span>
-                        <p style="margin-top:10px;margin-left: 20px;margin-right: 20px;">@Html.ValueFor(m => m.Updated_at)</p>
+                        <p style="margin-top:10px;margin-left: 20px;margin-right: 20px;"></p>
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">Status</span>
                         <div class="col-md-3">
-                            @Html.DropDownList("Status_ID", new SelectList(ViewBag.staid, "ID", "Status_Name", Model.PROJECT_STATUS), new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Status_ID)
+                           
                         </div>
                         <span class="input-group-addon">Note :</span>
-                        <input id="note" type="text" class="form-control" name="note" value="@Html.ValueFor(m => m.Note)" placeholder="...">
+                        <input id="note" type="text" class="form-control" name="note" value="" placeholder="...">
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="col-md-6" style="margin-top: 10px;">
             <div>
                 @Html.ActionLink("Back to List", "Index")
             </div>
         </div>
-        <div class="col-md-6" style="margin-top: 10px;text-align: right;">
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input style="width:100px;font-size:16px;" type="submit" value="Save" class="btn btn-default" />
-                </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -228,18 +216,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-
-    <script>
-        $('#Quan_ID').select2();
-        $('#Street_ID').select2();
-        $('#Quan_ID').on('change', function () {
-            $('#Street_ID').empty();
-            $.getJSON('GetStreet?District_id=' + $('#Quan_ID').val(),
-                function (json) {
-                    $('#Street_ID').select2({ data: json });
-                });
-        });
-    </script>*@
 }

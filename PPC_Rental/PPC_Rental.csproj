@@ -322,6 +322,7 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Sale\DetailProject.cshtml" />
     <Content Include="Views\Sale\EditProject1.cshtml" />
+    <Content Include="Views\Sale\AddProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
